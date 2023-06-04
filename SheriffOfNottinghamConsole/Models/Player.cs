@@ -26,5 +26,30 @@ namespace SheriffOfNottinghamConsole.Models
             cheese = new Cheese();
             chickens= new Chicken();
         }
+
+        // Make an overload to choose the name
+        public Player (int id, string name)
+        {
+            Id  = id;
+            Name = name;
+            Colour = (PlayerColours)Id;
+            apples = new Apple();
+            bread = new Bread();
+            cheese = new Cheese();
+            chickens = new Chicken();
+        }
+
+        // All user to select the colour
+        public Player(int id, string name, PlayerColours colour)
+        {
+            Id = id;
+            Name = name;
+            Colour = colour;
+            apples = new Apple();
+            bread = new Bread();
+            cheese = new Cheese();
+            chickens = new Chicken();
+        }
+        
     }
 }
