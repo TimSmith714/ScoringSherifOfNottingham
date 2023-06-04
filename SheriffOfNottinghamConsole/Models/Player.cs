@@ -8,18 +8,19 @@ namespace SheriffOfNottinghamConsole.Models
 {
     public class Player
     {
-        public int PlayerId { get; set; }
-        public string PlayerName { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public int Gold { get; set; }
         public Apple apples { get; set; }
         public Bread bread { get; set; }
         public Cheese cheese { get; set; }
         public Chicken chickens { get; set; }
-        public PlayerColours PlayerColour { get; set; }
+        public PlayerColours Colour { get; set; }
 
-        public Player(int Id) {
-            PlayerId = Id;
-            PlayerName = "Player" + PlayerId.ToString();
-            PlayerColour = (PlayerColours)PlayerId;
+        public Player(int id) {
+            Id = id;
+            Name = "Player" + Id.ToString();
+            Colour = (PlayerColours)Id;
             apples = new Apple();
             bread = new Bread();
             cheese = new Cheese();
