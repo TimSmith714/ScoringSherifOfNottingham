@@ -100,10 +100,10 @@ namespace SheriffOfNottinghamConsole
             // Act
             // Add a Player with Blue (colour 1)
             game.AddPlayer("BluePlayer", 1);
-            // Add a default colour player (0:Green)
+            // Add a default colour player (The playerId will be 1 so also blue)
             game.AddPlayer("GreenPlayer");
-            // add a default colour player the would be blue
-            game.AddPlayer("TealPlayer");
+
+            Assert.That(game.PlayerList[0].Colour, Is.Not.EqualTo(game.PlayerList[1].Colour));
 
 
         }
