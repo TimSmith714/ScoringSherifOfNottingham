@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace SheriffOfNottinghamConsole.Models
 {
-    public class Chickens : IProduce
+    public class Chicken : IProduce
     {
 
-        public Chickens()
+        public Chicken()
         {
             Value = 4;
             IsKing = false;
