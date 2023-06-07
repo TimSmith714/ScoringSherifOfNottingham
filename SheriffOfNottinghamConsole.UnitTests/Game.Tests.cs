@@ -92,6 +92,32 @@ namespace SheriffOfNottinghamConsole
         }
 
         [Test]
+        public void GetAvailableColoursAll()
+        {
+            // Arrange 
+            var game = new Game();
+            // Act
+            // Nothing to do here as not going to assign any colours yet
+            // Assert
+            var availableColours = game.GetAvailableColours();
+            Assert.That(availableColours.Count, Is.EqualTo(6));
+        }
+
+        [Test]
+        public void GetAvailableColoursTwoAssigned()
+        {
+            // Arrange 
+            var game = new Game();
+            // Act
+            // This time add a couple of players to assign some colours
+            game.AddPlayer();
+            game.AddPlayer();
+            // Assert
+            var availableColours = game.GetAvailableColours();
+            Assert.That(availableColours.Count, Is.EqualTo(4));
+        }
+
+        [Test]
         public void CreatePlayersWithColourCollision()
         {
             // Arrange

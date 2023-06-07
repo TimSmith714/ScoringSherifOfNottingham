@@ -20,6 +20,7 @@ namespace SheriffOfNottinghamConsole.Models
         // These are handled separately because they do not count towards the
         // ProduceScore only the calculation for Title
         public int RoyalNumber { get; set; }
+        public int TotalNumber { get; set; }
 
         // The Score from the title
         public int TitleScore()
@@ -35,6 +36,18 @@ namespace SheriffOfNottinghamConsole.Models
         {
             int produceValue = Value * Number;
             return produceValue + TitleScore();
+        }
+
+        public void SetNumber(int number)
+        {
+            Number = number;
+            TotalNumber = Number + RoyalNumber;
+        }
+
+        public void SetRoyalNumber(int number)
+        {
+            RoyalNumber = number;
+            TotalNumber = Number + RoyalNumber;
         }
     }
 

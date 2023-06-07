@@ -74,5 +74,17 @@ namespace SheriffOfNottinghamConsole
             Assert.That(newApple.ProduceScore(), Is.EqualTo(30));
         }
 
+        public void AppleTotalProduce()
+        {
+            // Arrange
+            var newApple = new Apple();
+            // Act
+            // Set number and royal number
+            newApple.Number = 5;
+            newApple.RoyalNumber= 5;
+            // Assert 
+            Assert.That(newApple.TotalNumber, Is.EqualTo(10));
+        }
+
     }
 }

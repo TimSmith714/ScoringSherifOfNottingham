@@ -10,8 +10,9 @@ namespace SheriffOfNottinghamConsole.Models
     {
         public List<Player> PlayerList { get; set; }
 
-        public Game() {
-        PlayerList= new List<Player>();
+        public Game()
+        {
+            PlayerList = new List<Player>();
         }
 
         public void ListPlayers()
@@ -52,8 +53,39 @@ namespace SheriffOfNottinghamConsole.Models
 
             PlayerList.Add(new Player(PlayerCount(), playerName, (PlayerColours)colour));
             return 1;
+        }
 
+        public List<PlayerColours> GetAvailableColours()
+        {
+            var availableColours = new List<PlayerColours>();
 
+            foreach (int i in Enum.GetValues(typeof(PlayerColours)))
+            {
+                availableColours.Add((PlayerColours)i);
+            }
+
+            foreach(Player player in PlayerList)
+            {
+                availableColours.Remove((PlayerColours)player.Colour);
+            }
+            return availableColours;
+        }
+
+        public void ListAvailableColours()
+        {
+            var availableColours = GetAvailableColours();
+            Console.WriteLine("Available Colours:");
+            foreach(PlayerColours colour in availableColours)
+            {
+                Console.Write("{0}, ",colour.ToString());
+            }
+            Console.WriteLine("===");
+        }
+
+        // Work out King/Queen
+        public void SetTitle(string title, string produce)
+        {
+            throw new NotImplementedException();
 
         }
 
